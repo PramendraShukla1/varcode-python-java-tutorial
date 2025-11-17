@@ -30,9 +30,9 @@ export default function Header() {
           </Button>
         </div>
         <div className="md:hidden">
-          <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(true)}>
-            <Menu className="h-6 w-6" />
-            <span className="sr-only">Open menu</span>
+          <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <span className="sr-only">Toggle menu</span>
           </Button>
         </div>
       </nav>
@@ -40,26 +40,19 @@ export default function Header() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -20, height: 0 }}
+            animate={{ opacity: 1, y: 0, height: 'auto' }}
+            exit={{ opacity: 0, y: -20, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 bg-background md:hidden"
+            className="md:hidden"
           >
-            <div className="container mx-auto flex h-full flex-col p-4 lg:px-8">
-              <div className="flex items-center justify-between">
-                <Logo />
-                <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
-                  <X className="h-6 w-6" />
-                  <span className="sr-only">Close menu</span>
-                </Button>
-              </div>
-              <div className="mt-16 flex flex-col items-center gap-8">
+            <div className="bg-background border-t border-border/50">
+              <div className="container mx-auto flex flex-col items-center gap-4 py-8">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="font-headline text-2xl font-medium"
+                    className="font-headline text-xl font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
