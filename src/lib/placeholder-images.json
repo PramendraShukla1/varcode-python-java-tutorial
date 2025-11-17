@@ -1,3 +1,16 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "python-docs-preview",
+      "description": "Preview of Python documentation",
+      "imageUrl": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2RlJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzYzMzU4NTU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code abstract"
+    },
+    {
+      "id": "java-docs-preview",
+      "description": "Preview of Java documentation",
+      "imageUrl": "https://images.unsplash.com/photo-1690585703267-de31ea667ef0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2RlJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzYzMzU4NTU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code abstract"
+    }
+  ]
 }
